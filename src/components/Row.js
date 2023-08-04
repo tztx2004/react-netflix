@@ -60,9 +60,8 @@ export default function Row({ title, id, fetchUrl, isLargeRow }) {
       >
         <div id={id} className="row__posters">
           {movies.map((movie) => (
-            <SwiperSlide>
+            <SwiperSlide key={movie.id}>
               <img
-                key={movie.id}
                 className={`row__poster ${isLargeRow && "row__posterLarge"}`}
                 src={`https://image.tmdb.org/t/p/original/${
                   isLargeRow ? movie.poster_path : movie.backdrop_path
